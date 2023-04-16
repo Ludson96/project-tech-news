@@ -1,9 +1,12 @@
 import requests
 import time
+from parsel import Selector
+
+HTML = str
 
 
 # Requisito 1
-def fetch(url):
+def fetch(url: str) -> HTML | None:
     try:
         response = requests.get(
             url, headers={"user-agent": "Fake user-agent"}, timeout=3
@@ -20,8 +23,15 @@ def fetch(url):
 
 
 # Requisito 2
-def scrape_updates(html_content):
-    """Seu código deve vir aqui"""
+def scrape_updates(html_content: HTML) -> list:
+    try:
+        selector = Selector(text=html_content)
+        all_links = selector.css(".cs-overlay a::attr(href)").getall()
+    except ValueError as e:
+        print(f"Erro ao tentar obter links: {e}")
+        return []
+    else:
+        return all_links
 
 
 # Requisito 3
