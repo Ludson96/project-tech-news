@@ -47,7 +47,7 @@ def scrape_next_page_link(html_content: HTML) -> None | str:
 
 
 # Requisito 4
-def scrape_news(html_content):
+def scrape_news(html_content: HTML) -> dict:
     selector = Selector(text=html_content)
 
     summary_content = selector.css(
