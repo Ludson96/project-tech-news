@@ -39,7 +39,7 @@ def test_reading_plan_group_news():
     # Configura o mock para retornar os dados de teste
     ReadingPlanService._db_news_proxy = MagicMock(return_value=mock_data)
 
-    # Teste para verificar se um valor inválido para `available_time` levanta ValueError
+    # Verifica se um valor inválido para `available_time` levanta ValueError
     with pytest.raises(ValueError):
         ReadingPlanService.group_news_for_available_time(-28)
 
