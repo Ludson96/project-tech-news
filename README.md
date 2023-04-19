@@ -34,6 +34,8 @@ As notícias foram obtidas através da raspagem do [blog da Trybe](https://blog.
 
 ## Instruções para instalar e rodar
 
+<details>
+
 1. Clone o repo:
 
     ```bash-shell
@@ -91,14 +93,14 @@ As notícias foram obtidas através da raspagem do [blog da Trybe](https://blog.
 
     #siga os passos no terminal
     ```
+    
+    </details>
 
 ## Raspagem
 
 Abaixo está uma lista das funções de raspagem disponíveis no arquivo `scraper.py`.
 
 <details>
-
-  <summary><strong>Funções</strong></summary>
 
 ### `fetch(url)`
 
